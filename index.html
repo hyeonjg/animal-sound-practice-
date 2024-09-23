@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		body{background-image: url("bg.jpg"); margin: 0;}
+
+		.bt{display: none;}
+		#pp{position: absolute; color: white; font-size: 4rem;
+			top: 40%; left: 40%;}
+
+		#img_sheep{
+			width: 300px; position: absolute;
+			top: 600px; left: 800px;
+		}
+		#img_cow{
+			width: 400px; position: absolute;
+			top: 200px; left: 300px;}
+		#img_wolf{
+			width: 250px; position: absolute;
+			top: 400px; left: 1300px;}
+		#img_bird{
+			width: 100px; position: absolute;
+			top: 200px; left: 1000px;}
+	</style>
+</head>
+<body>
+	<!-- <input type='color' id="colorInput"> -->
+
+	<p id='pp'> click animals! </p>
+
+	<audio id='snd_sheep' src='sheep.mp3' type='audio/mp3'></audio>
+	<button type='button' id='sheep' class='bt'></button>
+	<label for='sheep'>
+		<img id='img_sheep' src='sheep.png' width=300px>
+	</label>
+
+	<audio id='snd_cow' src='cow.mp3' type='audio/mp3'></audio>
+	<button type='button' id='cow' class='bt'></button>
+	<label for='cow'>
+		<img id='img_cow' src='cow.png' width=250px>
+	</label>
+
+	<audio id='snd_wolf' src='wolf.mp3' type='audio/mp3'></audio>
+	<button type='button' id='wolf' class='bt'></button>
+	<label for='wolf'>
+		<img id='img_wolf' src='wolf.png' width=250px>
+	</label>
+
+	<audio id='snd_bird' src='bird.mp3' type='audio/mp3'></audio>
+	<button type='button' id='bird' class='bt'></button>
+	<label for='bird'>
+		<img id='img_bird' src='bird.png' width=150px>
+	</label>
+
+	<script type ="text/javascript">
+		//colorInput.oninput = function(){
+		//	document.body.style.background = colorInput.value;
+		//}
+
+		function img_rot(imgID){
+			imgID.style.transform = 'rotate(15deg)';
+		}
+
+		function img_norot(imgID){
+			imgID.style.transform = 'rotate(0deg)';
+		}
+
+
+		snd_sheep_p = false
+		sheep.onclick = function(){
+			if (snd_sheep_p == false){
+				snd_sheep.play();
+				snd_sheep_p = true;
+				img_rot(img_sheep);
+			}
+			else{
+				snd_sheep.pause();
+				snd_sheep_p = false;
+				img_norot(img_sheep);
+			}
+		};
+
+		snd_cow_p = false
+		cow.onclick = function(){
+			if (snd_cow_p == false){
+				snd_cow.play();
+				snd_cow_p = true;
+				img_rot(img_cow);
+			}
+			else{
+				snd_cow.pause();
+				snd_cow_p = false;
+				img_norot(img_cow);
+			}
+		};
+
+		snd_wolf_p = false
+		wolf.onclick = function(){
+			if (snd_wolf_p == false){
+				snd_wolf.play();
+				snd_wolf_p = true;
+				img_rot(img_wolf);
+			}
+			else{
+				snd_wolf.pause();
+				snd_wolf_p = false;
+				img_norot(img_wolf);
+			}
+		};
+
+		snd_bird_p = false
+		bird.onclick = function(){
+			if (snd_bird_p == false){
+				snd_bird.play();
+				snd_bird_p = true;
+				img_rot(img_bird);
+			}
+			else{
+				snd_bird.pause();
+				snd_bird_p = false;
+				img_norot(img_bird);
+			}
+		};
+
+
+	</script>
+</body>
+</html>
